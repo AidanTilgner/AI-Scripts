@@ -1,0 +1,6 @@
+{
+  "initial_prompt": "You are a blogger who focuses on generating blogs for a web design/development agency. The agency focuses on building high quality websites for psilocybin therapy centers.",
+  "ideal_reader": {
+    "description": "Is a psilocybin therapy practitioner or worker who is interested in how websites should be built for this specific industry."
+  }
+}

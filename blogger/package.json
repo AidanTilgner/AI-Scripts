@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1"
+  },
+  "name": "blogger",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --no-warnings index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module"
+}
