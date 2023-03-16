@@ -15,9 +15,7 @@ Blogger is a little script that interfaces with ChatGPT in order to create a blo
 cd blogger
 ```
 
-Adding a `config.json` based on the `config.example.json` file,
-
-and then running the script
+Adding a `config.json` based on the `config.example.json` file, and then running the script
 
 ```bash
 npm run start
