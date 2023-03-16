@@ -44,7 +44,8 @@ const getArticleRequestPromptFromTitle = (title) => {
 
     "${cf.ideal_reader.description}"
 
-    The article should follow the following writing convention, and be formatted as a markdown file:
+    The article should follow the following writing convention, and be formatted as a markdown file.
+    Please leave anything surrounded by {{}} alone, they will be used for later parsing:
 
     ${exampleArticle}
   `;

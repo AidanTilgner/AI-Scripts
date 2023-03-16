@@ -3,6 +3,7 @@ import { generateArticleFromTitle } from "./utils/openai.js";
 import readline from "readline";
 import { writeFileSync } from "fs";
 import { formatTitleIntoFileName } from "./utils/formatting.js";
+import { pipeline } from "./utils/pipeline.js";
 config({ path: "../.env" });
 
 const rl = readline.createInterface({
@@ -17,13 +18,15 @@ function start() {
       '\nPerfect! Generating article with title: "' + title + '"...\n\n'
     );
     const article = await generateArticleFromTitle(title);
-    const formattedName = formatTitleIntoFileName(title);
+    const formattedArticleName = formatTitleIntoFileName(title);
 
-    writeFileSync("./articles/" + formattedName + ".md", article);
+    const parsedArticle = pipeline(article);
+
+    writeFileSync("./articles/" + formattedArticleName + ".md", parsedArticle);
 
     console.log(
       "\nArticle generated! Check out the articles folder with the name: " +
-        formattedName +
+        formattedArticleName +
         ".md\n"
     );
 

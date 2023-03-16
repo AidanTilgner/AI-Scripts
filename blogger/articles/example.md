@@ -1,7 +1,13 @@
+---
+title: <title>
+description: <description>
+<!-- Formatted ["tag1", "tag2", "tag3"] -->
+tags: <tag>[]
+---
+
 # <title>
 
-<date>
-<author>
+#### <a_text_description_of_the_article>
 
 ## <Section1>
 <some_description_about_the_section>

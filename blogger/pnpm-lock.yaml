@@ -3,10 +3,12 @@ lockfileVersion: 5.4
 specifiers:
   dotenv: ^16.0.3
   openai: ^3.2.1
+  prettier: ^2.8.4
 
 dependencies:
   dotenv: 16.0.3
   openai: 3.2.1
+  prettier: 2.8.4
 
 packages:
 
@@ -77,4 +79,10 @@ packages:
       form-data: 4.0.0
     transitivePeerDependencies:
       - debug
+    dev: false
+
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: false
