@@ -3,7 +3,7 @@ import { config } from "dotenv";
 import cf from "../config.json" assert { type: "json" };
 import { readFileSync } from "fs";
 import { format } from "prettier";
-import { trackArticle } from "./track.js";
+import { getArticleFromHistory, trackArticle } from "./track.js";
 
 config({ path: "../.env" });
 
@@ -12,6 +12,15 @@ const configuration = new Configuration({
 });
 
 export const openai = new OpenAIApi(configuration);
+
+const makeChatCompletionRequest = async (messages) => {
+  const { data } = await openai.createChatCompletion({
+    model: "gpt-3.5-turbo",
+    messages: messages,
+  });
+
+  return data;
+};
 
 export const generateArticleFromTitleAndPoints = async (title, points) => {
   try {
@@ -34,10 +43,7 @@ export const generateArticleFromTitleAndPoints = async (title, points) => {
 
     const id = trackArticle(title, messages);
 
-    const { data } = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: messages,
-    });
+    const data = await makeChatCompletionRequest(messages);
 
     const selected = data.choices[0].message.content;
 
@@ -90,4 +96,26 @@ const getArticleRequestPromptFromTitleAndPoints = (title, points) => {
   const formatted = format(prompt, { parser: "markdown" });
 
   return formatted;
+};
+
+export const retryRequestFromOldArticle = async (article_id) => {
+  const oldArticle = getArticleFromHistory(article_id);
+  if (!oldArticle) {
+    console.error(
+      "Article not found in history. Are you sure that's the right ID?"
+    );
+    return;
+  }
+
+  const { title, messages } = oldArticle;
+
+  const data = await makeChatCompletionRequest(messages);
+
+  const selected = data.choices[0].message.content;
+
+  return {
+    article: selected,
+    messages,
+    article_id,
+  };
 };

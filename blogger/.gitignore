@@ -1,3 +1,4 @@
-# Ignore everything in ./articles except "example.md"
 articles/*
 !articles/example.md
+
+/data/history.json
