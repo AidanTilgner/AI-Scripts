@@ -43,7 +43,7 @@ function start() {
 async function retryArticle() {
   rl.question("\nEnter the article ID: ", async (id) => {
     const foundArticle = getArticleFromHistory(id);
-    console.log("foundArticle", foundArticle);
+
     const {
       article: { fileName },
     } = foundArticle;
@@ -52,7 +52,7 @@ async function retryArticle() {
       rl.close();
       return;
     }
-    return;
+
     console.info('\nPerfect! Generating article with ID: "' + id + '"...\n\n');
     const { article, article_id } = await retryRequestFromOldArticle(id);
     if (!article) {
