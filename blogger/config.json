@@ -5,5 +5,14 @@
   },
   "author": {
     "name": "Aidan Tilgner"
+  },
+  "default_tags": ["web design", "learning"],
+  "article_min_length": {
+    "value": 1000,
+    "unit": "words"
+  },
+  "article_max_length": {
+    "value": 2000,
+    "unit": "words"
   }
 }

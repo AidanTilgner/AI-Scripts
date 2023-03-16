@@ -1,16 +1,16 @@
 import cf from "../config.json" assert { type: "json" };
 import { format } from "prettier";
 
-export const pipeline = (article) => {
+export const pipeline = async (article) => {
   let newArticle = article;
   newArticle = addToFrontMatter(newArticle, "author", cf.author.name);
   newArticle = addToFrontMatter(newArticle, "post_date", getCurrentDate());
-  const frontmatter = extractFrontMatter(newArticle);
-  newArticle = addToFrontMatter(
-    newArticle,
-    "tags",
-    checkTagsAndParseIfNecessary(frontmatter.tags)
-  );
+  // const frontmatter = extractFrontMatter(newArticle);
+  // newArticle = addToFrontMatter(
+  //   newArticle,
+  //   "tags",
+  //   await checkTagsAndParseIfNecessary(frontmatter.tags)
+  // );
   return newArticle;
 };
 
@@ -69,18 +69,17 @@ export const extractFrontMatter = (article) => {
 
 const checkTagsAndParseIfNecessary = async (tags) => {
   try {
+    if (!tags) return `["${cf.default_tags.join('", "')}"]`;
     const parsedTags = JSON.parse(tags);
     if (Array.isArray(parsedTags)) {
       return parsedTags;
     }
   } catch (e) {
-    // we need to parse it
     const newTags = tags
       .replace("[", "")
       .replace("]", "")
       .split(",")
       .map((t) => t.trim());
-    console.log("newTags: ", newTags);
     return `["${newTags.join('", "')}"]`;
   }
 };

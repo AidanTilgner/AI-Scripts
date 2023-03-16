@@ -1,0 +1,19 @@
+[
+  {
+    "id": "62c6f4ac9dff1a013a46a85357d74b6a",
+    "article": {
+      "title": "The Importance of HIPAA Compliant Contact Forms",
+      "fileName": "the-importance-of-hipaa-compliant-contact-forms.md"
+    },
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a blogger who focuses on generating blogs for a web design/development agency. The agency focuses on building high quality websites for psilocybin therapy centers."
+      },
+      {
+        "role": "user",
+        "content": "    Please generate an article entitled \"The Importance of HIPAA Compliant Contact Forms\". The article should be long enough to be interesting, but not\n    too long.\n\n    The article should be written in a way that is accessible to a general audience, but also specifically\n    curated to a person who fits the following description:\n\n    \"Is a psilocybin therapy practitioner or worker who is interested in how websites should be built for this specific industry.\"\n\n\n\n\n    The article should be at least 1000 words long, and at most 2000 words long.\n\n    The article should follow the following writing convention, and be formatted as a markdown file:\n\n    ---\n\ntitle: <title>\ndescription: <description>\n\n<!-- Formatted [\"tag1\", \"tag2\", \"tag3\"] -->\n\n## tags: <tag>[]\n\n# <title>\n\n#### <a_text_description_of_the_article>\n\n## <Section1>\n\n<some_description_about_the_section>\n\n### <Subsection1>\n\n<some_description_about_the_subsection>\n\n### <Subsection2>\n\n<some_description_about_the_subsection>\n\n## <Section2>\n\n<some_description_about_the_section>\n\n### <Subsection1>\n\n<some_description_about_the_subsection>\n\n### <Subsection2>\n\n<some_description_about_the_subsection>\n\n## <Section3>\n\n<some_description_about_the_section>\n\n### <Subsection1>\n\n<some_description_about_the_subsection>\n\n### <Subsection2>\n\n<some_description_about_the_subsection>\n\n## Conclusion\n\n<some_conclusion>\n"
+      }
+    ]
+  }
+]
