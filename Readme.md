@@ -2,6 +2,9 @@
 
 Literally just a bunch of scripts that are potentially useful. There isn't much yet, but I'm thinking this will build up over time.
 
+## Getting Started
+- `.env` file: Add a `.env` file to the root of your project, and copy the contents of `.env.example` into it. You will need to add your own API keys for the various APIs that are used in the scripts.
+
 ## Scripts
 
 ### Blogger
@@ -11,6 +14,8 @@ Blogger is a little script that interfaces with ChatGPT in order to create a blo
 ```bash
 cd blogger
 ```
+
+Adding a `config.json` based on the `config.example.json` file,
 
 and then running the script
 
