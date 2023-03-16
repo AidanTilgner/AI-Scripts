@@ -1,0 +1,18 @@
+{
+  "initial_prompt": "Here you can define the system message that will define how ChatGPT should behave.",
+  "ideal_reader": {
+    "description": "A description of the ideal reader for your blog posts."
+  },
+  "author": {
+    "name": "Your name"
+  },
+  "default_tags": ["tag1", "tag2", "tag3"],
+  "article_min_length": {
+    "value": 1000,
+    "unit": "words"
+  },
+  "article_max_length": {
+    "value": 2000,
+    "unit": "words"
+  }
+}

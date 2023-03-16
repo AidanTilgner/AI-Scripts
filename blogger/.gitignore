@@ -2,3 +2,5 @@ articles/*
 !articles/example.md
 
 data/history.json
+
+config.json
