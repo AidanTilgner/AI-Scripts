@@ -81,19 +81,22 @@ async function retryArticle() {
 
 async function generateNewArticle() {
   rl.question("\nEnter a title for your article: ", async (title) => {
-    console.info(
-      '\nPerfect! Generating article with title: "' + title + '"...\n\n'
-    );
     const pointsToCover = [];
     rl.question(
       "\nWhat points do you want to cover? (separate by commas, leave blank if none): ",
       async (points) => {
         if (points === "") {
+          console.info(
+            '\nPerfect! Generating article with title: "' + title + '"...\n\n'
+          );
           generateAndPublishArticle(title, pointsToCover);
           return;
         }
         const parsedPoints = points.split(",").map((p) => p.trim());
         pointsToCover.push(...parsedPoints);
+        console.info(
+          '\nPerfect! Generating article with title: "' + title + '"...\n\n'
+        );
         generateAndPublishArticle(title, pointsToCover);
       }
     );
