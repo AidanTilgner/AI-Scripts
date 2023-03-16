@@ -1,4 +1,4 @@
 articles/*
 !articles/example.md
 
-/data/history.json
+data/history.json
