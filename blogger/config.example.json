@@ -14,5 +14,8 @@
   "article_max_length": {
     "value": 2000,
     "unit": "words"
+  },
+  "output_location": {
+    "path": "a secondary path (other than /articles) that you would like articles to be saved to"
   }
 }
