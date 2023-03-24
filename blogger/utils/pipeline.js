@@ -11,6 +11,7 @@ export const pipeline = async (article) => {
   //   "tags",
   //   await checkTagsAndParseIfNecessary(frontmatter.tags)
   // );
+  newArticle = format(article, { parser: "markdown" });
   return newArticle;
 };
 

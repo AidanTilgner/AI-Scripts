@@ -15,7 +15,7 @@ export const openai = new OpenAIApi(configuration);
 
 const makeChatCompletionRequest = async (messages) => {
   const { data } = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
+    model: cf.model.default || "gpt-3.5-turbo",
     messages: messages,
   });
 

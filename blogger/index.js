@@ -7,10 +7,8 @@ import readline from "readline";
 import { writeFileSync } from "fs";
 import { formatTitleIntoFileName } from "./utils/formatting.js";
 import { pipeline } from "./utils/pipeline.js";
-import {
-  checkArticleExistsInHistory,
-  getArticleFromHistory,
-} from "./utils/track.js";
+import { getArticleFromHistory } from "./utils/track.js";
+import { outputArticle } from "./utils/output.js";
 
 config({ path: "../.env" });
 
@@ -67,7 +65,7 @@ async function retryArticle() {
 
     const parsedArticle = await pipeline(article);
 
-    writeFileSync("./articles/" + fileName + ".md", parsedArticle);
+    outputArticle(parsedArticle, fileName);
 
     console.info(
       "\nArticle generated! Check out the articles folder with the name: " +
@@ -121,7 +119,7 @@ async function generateAndPublishArticle(title, points) {
 
   const parsedArticle = await pipeline(article);
 
-  writeFileSync("./articles/" + formattedArticleName + ".md", parsedArticle);
+  outputArticle(parsedArticle, formattedArticleName);
 
   console.info(
     "\nArticle generated! Check out the articles folder with the name: " +
