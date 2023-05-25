@@ -4,7 +4,10 @@ import path from "path";
 
 export const defaultStorageLocation = "./data";
 export const getFileName = (url: string) => {
-  return `${url.replace(/\//g, "_")}.json`;
+  return `${url
+    .replace("https://", "")
+    .replace("http://", "")
+    .replace(/\//g, "")}.json`;
 };
 
 export const writeDataObjectToFile = (

@@ -10,17 +10,18 @@ export const handleBuildContextObjectForPage = async (
 ) => {
   try {
     const pageLinks = await getWebsitePageLinks(url);
-    console.log(
+    console.info(
       "Building a context object based on the following found sources: ",
       pageLinks,
       "\n"
     );
+
     const allTextContent = await getMultiplePageTextContent(pageLinks);
 
     const contextObjects: Record<string, string>[] = [];
 
-    for (const textContent of allTextContent) {
-      const contextObject = await getContextObjectForContent(url, textContent);
+    for (const { url, content } of allTextContent) {
+      const contextObject = await getContextObjectForContent(url, content);
       contextObjects.push(contextObject);
     }
 
@@ -28,7 +29,7 @@ export const handleBuildContextObjectForPage = async (
       return { ...acc, ...curr };
     }, {});
 
-    console.log("Finished building context object");
+    console.info("Finished building context object.");
 
     if (writeToFile) {
       const written = await writeDataObjectToFile(contextObject, url);
@@ -49,9 +50,9 @@ export const getContextObjectForContent = async (
   textContent: string
 ) => {
   try {
-    console.log("Attempting to get context object for content on page: ", url);
+    console.info("Attempting to get context object for content on page: ", url);
     const systemPrompt = getDefaultPromptForPage();
-    const userPrompt = getPromptForPage(url, textContent);
+    const userPrompt = getPromptForContent(textContent);
 
     const messages: ChatCompletionRequestMessage[] = [
       {
@@ -80,7 +81,7 @@ export const getContextObjectForContent = async (
 
     const contextObject = JSON.parse(llmResponse);
 
-    console.log("Successfully got context object for content on page: ", url);
+    console.info("Successfully got context object for content on page: ", url);
     return contextObject;
   } catch (error) {
     console.error(error);
@@ -140,9 +141,9 @@ export const getDefaultPromptForPage = () => {
       `;
 };
 
-export const getPromptForPage = (url: string, content: string) => {
+export const getPromptForContent = (content: string) => {
   return `
-    Here is the text content of a page from ${url}:
+    Here is some data:
 
     ${content}
     `;

@@ -1,10 +1,3 @@
----
-title: <title>
-description: <description>
-<!-- Formatted ["tag1", "tag2", "tag3"] -->
-tags: <tag>[]
----
-
 # <title>
 
 #### <a_text_description_of_the_article>
