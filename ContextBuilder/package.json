@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1",
+    "prettier": "^2.8.8",
+    "puppeteer": "^20.3.0"
+  },
+  "devDependencies": {
+    "@types/prettier": "^2.7.2",
+    "tsx": "^3.12.7"
+  },
+  "name": "contextbuilder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

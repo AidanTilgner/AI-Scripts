@@ -1,0 +1,30 @@
+{
+  "name": "Aidan Tilgner",
+  "title": "Software Developer",
+  "email": "aidantilgner02@gmail.com",
+  "website": "https://aidantilgner.dev",
+  "skills": [
+    {
+      "name": "React",
+      "description": "A popular and highly supported frontend framework for building high quality user interfaces."
+    },
+    {
+      "name": "TypeScript",
+      "description": "A strongly typed superset of JavaScript that allows for better maintainability and reusability of code."
+    },
+    {
+      "name": "Golang",
+      "description": "A highly performant compiled programming language that is used to build scalable and reliable software."
+    },
+    {
+      "name": "Svelte",
+      "description": "A lighting fast, reactive framework for building web apps with excellent developer and user experiences."
+    }
+  ],
+  "social": [
+    { "name": "GitHub", "url": "https://github.com/aidantilgner" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/aidan-tilgner/" },
+    { "name": "Medium", "url": "https://aidantilgner.medium.com/" }
+  ],
+  "other": [{ "name": "Professional Tutoring" }]
+}
