@@ -112,27 +112,13 @@ export const getDefaultPromptForPage = () => {
           }
   
           It's important to consider that the format of the raw data could be anything, but the output should always be a JSON object.
-  
-          It's also important to remember to avoid duplicate information. For example, if you were given the following data:
-  
-          "John Doe is 30 years old and lives in New York, NY. John Doe is a software engineer."
-  
-          You may return the following JSON object:
-  
-          {
-              "people": [
-                  {
-                      "name": "John Doe",
-                      "age": 30,
-                      "location": "New York, NY",
-                      "occupation": "software engineer"
-                  }
-              ]
-          }
-  
-          Notice how the second sentence was not repeated in the output. This is because the output should only contain unique information.
-  
-          The user will provide you with data, and you will provide them with a JSON object.
+      
+          Things to consider when building your context object:
+          - People who might be important
+          - Places that might be important
+          - Services
+
+          Also consider, this is a context object which will be referenced by other AI models in order to promote a specific client. So, the more information you can provide to accomplish this, the better.
   
           Hard Rules:
           - The output must be a JSON object
